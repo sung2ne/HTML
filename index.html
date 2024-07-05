@@ -10,24 +10,24 @@
         <div class="container">
 
             <!-- 로그인 화면 -->
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" style="margin-top: 100px;">
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
                             로그인
                         </div>
                         <div class="card-body">
-                            <form name="loginForm" action="board_list.html">
+                            <form name="loginForm" id="loginForm">
                                 <div class="mb-3">
                                     <label class="form-label">아이디</label>
-                                    <input class="form-control" type="text" name="userId" placeholder="아이디" required>
+                                    <input class="form-control" type="text" name="userId" id="userId" placeholder="아이디">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">비밀번호</label>
                                     <input class="form-control" type="password" name="userPw" placeholder="비밀번호" required>
                                 </div>
                                 <div>
-                                    <button type="button" class="btn btn-primary">로그인</button>
+                                    <button type="button" class="btn btn-primary" onclick="check_user_id()">로그인</button>
                                 </div>
                             </form>
                         </div>
@@ -40,5 +40,20 @@
         </div>
 
         <script src="bootstrap-v5.3.3/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // 사용자 아이디 검증
+            function check_user_id() {
+                let userId = document.getElementById('userId');
+                console.log(userId.value);
+
+                if (userId.value == '') {
+                    alert('아이디를 입력하세요.');
+                    userId.focus();
+                } else if (userId.value.length < 5 || userId.value.length > 20) {
+                    alert('아이디는 5글자부터 20글자까지 입력하세요.');
+                    userId.focus();
+                }
+            }
+        </script>
     </body>
 </html>
