@@ -64,22 +64,40 @@
         <script src="bootstrap-v5.3.3/js/bootstrap.bundle.min.js"></script>
         <script>
             // 회원가입 폼 검증
-            function check_login_form() {
-                let userId = document.getElementById('userId');
-                let userPw = document.getElementById('userPw');
-                let loginForm = document.getElementById('loginForm');
-                // console.log(userId.value);
+            function check_signup_form() {
+                let userId = $('#userId');
+                let userPw = $('#userPw');
+                let userPw2 = $('#userPw2');
+                let userName = $('#userName');
+                let email = $('#email');
+                let tel = $('#tel');
+                let signupForm = $('#signupForm');
 
-                if (userId.value == '') {
+                if (userId.val == '') {
                     alert('아이디를 입력하세요.');
                     userId.focus();
-                } else if (userPw.value == '') {
+                } else if (userPw.val == '') {
                     alert('비밀번호를 입력하세요.');
                     userPw.focus();
+                } else if (userPw2.val == '') {
+                    alert('비밀번호 확인을 입력하세요.');
+                    userPw2.focus();
+                } else if (userPw2.val != userPw2.val) {
+                    alert('비밀번호와 비밀번호 확인이 다릅니다.');
+                    userPw.focus();
+                } else if (userName.val == '') {
+                    alert('이름을 입력하세요.');
+                    userName.focus();
+                } else if (email.val == '') {
+                    alert('이메일을 입력하세요.');
+                    email.focus();
+                } else if (tel.val == '') {
+                    alert('전화번호를 입력하세요.');
+                    tel.focus();
                 } else {
-                    // loginForm.method = 'post';
-                    loginForm.action = 'board_list.html';
-                    loginForm.submit();
+                    signupForm.attr('method', 'post');
+                    signupForm.attr('action', 'index.html');
+                    signupForm.submit();
                 }
             }
         </script>
