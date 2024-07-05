@@ -9,15 +9,15 @@
     <body>
         <div class="container">
 
-            <!-- 로그인 화면 -->
+            <!-- 회원가입 화면 -->
             <div class="row justify-content-center" style="margin-top: 100px;">
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
-                            로그인
+                            회원가입
                         </div>
                         <div class="card-body">
-                            <form name="loginForm" id="loginForm">
+                            <form name="signupForm" id="signupForm">
                                 <div class="mb-3">
                                     <label class="form-label">아이디</label>
                                     <input class="form-control" type="text" name="userId" id="userId" placeholder="아이디">
@@ -26,33 +26,44 @@
                                     <label class="form-label">비밀번호</label>
                                     <input class="form-control" type="password" name="userPw" id="userPw" placeholder="비밀번호">
                                 </div>
-                                <div>
-                                    <button type="button" class="btn btn-primary" onclick="check_login_form()">로그인</button>
+                                <div class="mb-3">
+                                    <label class="form-label">비밀번호 확인</label>
+                                    <input class="form-control" type="password" name="userPw2" id="userPw2" placeholder="비밀번호 확인">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">이름</label>
+                                    <input class="form-control" type="text" name="userName" id="userName" placeholder="이름">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">이메일</label>
+                                    <input class="form-control" type="text" name="email" id="email" placeholder="이메일">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">전화번호</label>
+                                    <input class="form-control" type="text" name="tel" id="tel" placeholder="전화번호">
+                                </div>
+                                <div class="row justify-content-between">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary" onclick="check_signup_form()">회원가입</button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="index.html" class="btn btn-danger">취소</a>                                        
+                                    </div>
                                 </div>
                             </form>
-                            <div class="row mt-3 text-center">
-                                <div class="col">
-                                    <a href="find_user_id.html">아이디 찾기</a>
-                                </div>
-                                <div class="col">
-                                    <a href="find_user_pw.html">비밀번호 찾기</a>
-                                </div>
-                                <div class="col">
-                                    <a href="signup.html">회원가입</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
                 
             </div>            
-            <!--// 로그인 화면 -->
+            <!--// 회원가입 화면 -->
 
         </div>
 
+        <script src="jquery/jquery-3.7.1.min.js"></script>
         <script src="bootstrap-v5.3.3/js/bootstrap.bundle.min.js"></script>
         <script>
-            // 로그인 폼 검증
+            // 회원가입 폼 검증
             function check_login_form() {
                 let userId = document.getElementById('userId');
                 let userPw = document.getElementById('userPw');
