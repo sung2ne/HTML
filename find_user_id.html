@@ -26,9 +26,13 @@
                                     <label class="form-label">전화번호</label>
                                     <input class="form-control" type="text" name="tel" id="tel" placeholder="전화번호" required>
                                 </div>
-                                <div>
-                                    <button type="button" class="btn btn-primary" onclick="check_find_user_id_form()">아이디 찾기</button>
-                                    <a href="login.html" class="btn btn-danger">취소</a>
+                                <div class="row justify-content-between">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary" onclick="check_find_user_id_form()">아이디 찾기</button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="login.html" class="btn btn-danger">취소</a>                                        
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -42,23 +46,23 @@
 
         <script src="bootstrap-v5.3.3/js/bootstrap.bundle.min.js"></script>
         <script>
-            // 로그인 폼 검증
-            function check_login_form() {
-                let userId = document.getElementById('userId');
-                let userPw = document.getElementById('userPw');
-                let loginForm = document.getElementById('loginForm');
+            // 아이디 찾기 폼 검증
+            function check_find_user_id_form() {
+                let userName = document.getElementById('userName');
+                let tel = document.getElementById('tel');
+                let findUserIdForm = document.getElementById('findUserIdForm');
                 // console.log(userId.value);
 
-                if (userId.value == '') {
-                    alert('아이디를 입력하세요.');
-                    userId.focus();
-                } else if (userPw.value == '') {
-                    alert('비밀번호를 입력하세요.');
-                    userPw.focus();
+                if (userName.value == '') {
+                    alert('이름을 입력하세요.');
+                    userName.focus();
+                } else if (tel.value == '') {
+                    alert('전화번호를 입력하세요.');
+                    tel.focus();
                 } else {
-                    // loginForm.method = 'post';
-                    loginForm.action = 'board_list.html';
-                    loginForm.submit();
+                    // findUserIdForm.method = 'post';
+                    findUserIdForm.action = 'index.html';
+                    findUserIdForm.submit();
                 }
             }
         </script>
