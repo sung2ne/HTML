@@ -24,10 +24,10 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">비밀번호</label>
-                                    <input class="form-control" type="password" name="userPw" placeholder="비밀번호" required>
+                                    <input class="form-control" type="password" name="userPw" id="userPw" placeholder="비밀번호" required>
                                 </div>
                                 <div>
-                                    <button type="button" class="btn btn-primary" onclick="check_user_id()">로그인</button>
+                                    <button type="button" class="btn btn-primary" onclick="check_login_form()">로그인</button>
                                 </div>
                             </form>
                         </div>
@@ -41,17 +41,23 @@
 
         <script src="bootstrap-v5.3.3/js/bootstrap.bundle.min.js"></script>
         <script>
-            // 사용자 아이디 검증
-            function check_user_id() {
+            // 로그인 폼 검증
+            function check_login_form() {
                 let userId = document.getElementById('userId');
-                console.log(userId.value);
+                let userPw = document.getElementById('userPw');
+                let loginForm = document.getElementById('loginForm');
+                // console.log(userId.value);
 
                 if (userId.value == '') {
                     alert('아이디를 입력하세요.');
                     userId.focus();
-                } else if (userId.value.length < 5 || userId.value.length > 20) {
-                    alert('아이디는 5글자부터 20글자까지 입력하세요.');
-                    userId.focus();
+                } else if (userPw.value == '') {
+                    alert('비밀번호를 입력하세요.');
+                    userPw.focus();
+                } else {
+                    // loginForm.method = 'post';
+                    loginForm.action = 'board_list.html';
+                    loginForm.submit();
                 }
             }
         </script>
